@@ -4,35 +4,34 @@
   <title>JavaScript Example</title>
 
   <style>
-    .hidden {
-      display: none;
+    p.blue {
+      color: blue;
     }
+
+    .red {
+      color: red;
+    }
+
   </style>
 </head>
 <body>
-  <h1 onclick="toggleParagraph()">Alexander Hamilton</h1>
-  <p class="hidden">Alexander Hamilton (January 11, 1755 or 1757 – July 12, 1804) was an American statesman and one of the Founding Fathers of the United States. He was an influential interpreter and promoter of the U.S. Constitution, as well as the founder of the nation's financial system, the Federalist Party, the United States Coast Guard, and The New York Post newspaper.</p>
+  <p onclick="changeParagraph(this)">first p tag</p>
+  <p onclick="changeParagraph(this)">second p tag</p>
+  <p onclick="changeParagraph(this)">third p tag</p>
+  <p onclick="changeParagraph(this)">fourth p tag</p>
 
-  <button onclick="changeHeader()">Turn Red</button>
+  <button onclick="styleAllParagraphs()">Make it Blue</button>
 
   <script>
-    function toggleParagraph() {
-      var pTag = document.querySelector('p');
-      pTag.classList.toggle('hidden');
+    function changeParagraph(bacon) {
+      bacon.classList.toggle('red');
     }
 
-    function changeHeader() {
-      var hTag = document.querySelector('h1');
-      var hexColorString = "#";
-      var characters = "0123456789ABCDEF";
-
-      for (var i = 0; i < 6; i++) {
-        var index = Math.floor(Math.random() * 16 + 0);
-        hexColorString += characters[index];
-      }
-
-      hTag.style.color = hexColorString;
-      console.log(hexColorString);
+    function styleAllParagraphs() {
+      var pTags = document.querySelectorAll('p');
+      pTags.forEach(function(pTag) {
+        pTag.classList.toggle('blue');
+      });
     }
   </script>
 </body>

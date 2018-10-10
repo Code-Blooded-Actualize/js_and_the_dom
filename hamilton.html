@@ -7,17 +7,37 @@
     .hidden {
       display: none;
     }
+
+    .red {
+      color: red;
+      padding-left: 100px;
+    }
   </style>
 </head>
 <body>
   <h1 onclick="toggleParagraph()">Alexander Hamilton</h1>
   <p class="hidden">Alexander Hamilton (January 11, 1755 or 1757 – July 12, 1804) was an American statesman and one of the Founding Fathers of the United States. He was an influential interpreter and promoter of the U.S. Constitution, as well as the founder of the nation's financial system, the Federalist Party, the United States Coast Guard, and The New York Post newspaper.</p>
 
+  <button onclick="changeHeader()">Turn Red</button>
+
   <script>
     function toggleParagraph() {
       var pTag = document.querySelector('p');
       pTag.classList.toggle('hidden');
     }
+
+    function changeHeader() {
+      var hTag = document.querySelector('h1');
+      hTag.classList.add('red')
+    }
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
